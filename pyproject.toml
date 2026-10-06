@@ -1,0 +1,9 @@
+[project]
+name = "zomato"
+version = "0.1.0"
+description = "Food Deliveery Batch Pipeline"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "dbt-snowflake>=1.12.0",
+]

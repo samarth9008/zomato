@@ -1,0 +1,2536 @@
+{
+  "count": 22,
+  "events": [
+    {
+      "eventTime": "2026-08-14T21:09:38.251181+00:00",
+      "eventType": "START",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "airflow": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/JobFacet",
+            "taskGroups": {},
+            "taskTree": {},
+            "tasks": {
+              "dbt_build_core": {
+                "downstream_task_ids": [],
+                "emits_ol_events": true,
+                "is_setup": false,
+                "is_teardown": false,
+                "operator": "airflow.providers.standard.operators.bash.BashOperator",
+                "ui_color": "#f0ede4",
+                "ui_fgcolor": "#000",
+                "ui_label": "dbt_build_core"
+              },
+              "reload_raw": {
+                "downstream_task_ids": [
+                  "dbt_build_core"
+                ],
+                "emits_ol_events": true,
+                "is_setup": false,
+                "is_teardown": false,
+                "operator": "airflow.providers.common.sql.operators.sql.SQLExecuteQueryOperator",
+                "ui_color": "#cdaaed",
+                "ui_fgcolor": "#000",
+                "ui_label": "reload_raw"
+              }
+            }
+          },
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "AIRFLOW",
+            "jobType": "DAG",
+            "processingType": "BATCH"
+          },
+          "ownership": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-1/OwnershipJobFacet.json#/$defs/OwnershipJobFacet",
+            "owners": [
+              {
+                "name": "airflow"
+              }
+            ]
+          },
+          "tags": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-0/TagsJobFacet.json#/$defs/TagsJobFacet",
+            "tags": [
+              {
+                "key": "dbt",
+                "source": "AIRFLOW",
+                "value": "dbt"
+              },
+              {
+                "key": "snowflake",
+                "source": "AIRFLOW",
+                "value": "snowflake"
+              },
+              {
+                "key": "zomato",
+                "source": "AIRFLOW",
+                "value": "zomato"
+              }
+            ]
+          }
+        },
+        "name": "zomato_batch",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "airflowDagRun": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunFacet",
+            "dag": {
+              "dag_id": "zomato_batch",
+              "fileloc": "/opt/airflow/dags/zomato_batch.py",
+              "owner": "airflow",
+              "owner_links": {},
+              "start_date": "2024-01-01T00:00:00+00:00",
+              "tags": "['dbt', 'snowflake', 'zomato']",
+              "timetable": {
+                "expression": "0 0 * * *",
+                "interval": 0,
+                "run_immediately": false,
+                "timezone": "UTC"
+              },
+              "timetable_summary": "0 0 * * *"
+            },
+            "dagRun": {
+              "conf": {},
+              "dag_bundle_name": "dags-folder",
+              "dag_id": "zomato_batch",
+              "dag_version_id": "01a0021a-a6ec-751d-ad82-8e8bf2ac0621",
+              "dag_version_number": 2,
+              "data_interval_end": "2026-08-14T21:09:36.045000+00:00",
+              "data_interval_start": "2026-08-14T21:09:36.045000+00:00",
+              "logical_date": "2026-08-14T21:09:36.045000+00:00",
+              "run_after": "2026-08-14T21:09:36.045000+00:00",
+              "run_id": "manual__2026-08-14T21:09:37.442952+00:00",
+              "run_type": "manual",
+              "start_date": "2026-08-14T21:09:38.251181+00:00"
+            }
+          },
+          "nominalTime": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-1/NominalTimeRunFacet.json#/$defs/NominalTimeRunFacet",
+            "nominalEndTime": "2026-08-14T21:09:36.045000+00:00",
+            "nominalStartTime": "2026-08-14T21:09:36.045000+00:00"
+          },
+          "processing_engine": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-1/ProcessingEngineRunFacet.json#/$defs/ProcessingEngineRunFacet",
+            "name": "Airflow",
+            "openlineageAdapterVersion": "2.5.0",
+            "version": "3.0.3"
+          }
+        },
+        "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T21:09:38.347353+00:00",
+      "eventType": "START",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "AIRFLOW",
+            "jobType": "TASK",
+            "processingType": "BATCH"
+          },
+          "ownership": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-1/OwnershipJobFacet.json#/$defs/OwnershipJobFacet",
+            "owners": [
+              {
+                "name": "airflow"
+              }
+            ]
+          },
+          "sql": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/SQLJobFacet.json#/$defs/SQLJobFacet",
+            "query": "USE WAREHOUSE ZOMATO_WH;\nCOPY INTO ZOMATO.RAW.restaurants FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/restaurants/  ON_ERROR='CONTINUE';\nCOPY INTO ZOMATO.RAW.users       FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/users/        ON_ERROR='CONTINUE';\nCOPY INTO ZOMATO.RAW.food        FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/food/         ON_ERROR='CONTINUE';\nCOPY INTO ZOMATO.RAW.menu        FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/menu/         ON_ERROR='CONTINUE';\nCOPY INTO ZOMATO.RAW.orders      FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/orders/;\nCOPY INTO ZOMATO.RAW.order_items FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/order_items/;\nCOPY INTO ZOMATO.RAW.reviews     FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/reviews/"
+          },
+          "tags": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-0/TagsJobFacet.json#/$defs/TagsJobFacet",
+            "tags": [
+              {
+                "key": "dbt",
+                "source": "AIRFLOW",
+                "value": "dbt"
+              },
+              {
+                "key": "snowflake",
+                "source": "AIRFLOW",
+                "value": "snowflake"
+              },
+              {
+                "key": "zomato",
+                "source": "AIRFLOW",
+                "value": "zomato"
+              }
+            ]
+          }
+        },
+        "name": "zomato_batch.reload_raw",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [
+        {
+          "facets": {
+            "schema": {
+              "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+              "_schemaURL": "https://openlineage.io/spec/facets/1-1-1/SchemaDatasetFacet.json#/$defs/SchemaDatasetFacet",
+              "fields": [
+                {
+                  "fields": [],
+                  "name": "REVIEW_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "ORDER_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "USER_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "RESTAURANT_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "RATING",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "COMMENT",
+                  "type": "TEXT"
+                },
+                {
+                  "fields": [],
+                  "name": "REVIEW_DATE",
+                  "type": "DATE"
+                }
+              ]
+            }
+          },
+          "name": "ZOMATO.RAW.REVIEWS",
+          "namespace": "snowflake://wsaoymw-ko56800"
+        },
+        {
+          "facets": {
+            "schema": {
+              "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+              "_schemaURL": "https://openlineage.io/spec/facets/1-1-1/SchemaDatasetFacet.json#/$defs/SchemaDatasetFacet",
+              "fields": [
+                {
+                  "fields": [],
+                  "name": "ORDER_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "ORDER_TIMESTAMP",
+                  "type": "TIMESTAMP_NTZ"
+                },
+                {
+                  "fields": [],
+                  "name": "ORDER_DATE",
+                  "type": "DATE"
+                },
+                {
+                  "fields": [],
+                  "name": "USER_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "R_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "RESTAURANT_CITY",
+                  "type": "TEXT"
+                },
+                {
+                  "fields": [],
+                  "name": "CUISINE",
+                  "type": "TEXT"
+                },
+                {
+                  "fields": [],
+                  "name": "ITEMS_COUNT",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "SALES_QTY",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "SUBTOTAL",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "DISCOUNT",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "DELIVERY_FEE",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "GST",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "SALES_AMOUNT",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "CURRENCY",
+                  "type": "TEXT"
+                },
+                {
+                  "fields": [],
+                  "name": "PAYMENT_METHOD",
+                  "type": "TEXT"
+                },
+                {
+                  "fields": [],
+                  "name": "ORDER_STATUS",
+                  "type": "TEXT"
+                },
+                {
+                  "fields": [],
+                  "name": "CUSTOMER_RATING",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "DELIVERY_TIME_MIN",
+                  "type": "NUMBER"
+                }
+              ]
+            }
+          },
+          "name": "ZOMATO.RAW.ORDERS",
+          "namespace": "snowflake://wsaoymw-ko56800"
+        },
+        {
+          "facets": {
+            "schema": {
+              "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+              "_schemaURL": "https://openlineage.io/spec/facets/1-1-1/SchemaDatasetFacet.json#/$defs/SchemaDatasetFacet",
+              "fields": [
+                {
+                  "fields": [],
+                  "name": "ORDER_ITEM_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "ORDER_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "R_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "F_ID",
+                  "type": "TEXT"
+                },
+                {
+                  "fields": [],
+                  "name": "PRICE",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "QUANTITY",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "LINE_AMOUNT",
+                  "type": "NUMBER"
+                }
+              ]
+            }
+          },
+          "name": "ZOMATO.RAW.ORDER_ITEMS",
+          "namespace": "snowflake://wsaoymw-ko56800"
+        }
+      ],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "airflow": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunFacet",
+            "dag": {
+              "dag_id": "zomato_batch",
+              "fileloc": "/opt/airflow/dags/zomato_batch.py",
+              "owner": "airflow",
+              "owner_links": {},
+              "start_date": "2024-01-01T00:00:00+00:00",
+              "tags": "['dbt', 'snowflake', 'zomato']",
+              "timetable": {
+                "expression": "0 0 * * *",
+                "interval": 0,
+                "run_immediately": false,
+                "timezone": "UTC"
+              },
+              "timetable_summary": "0 0 * * *"
+            },
+            "dagRun": {
+              "conf": {},
+              "dag_id": "zomato_batch",
+              "data_interval_end": "2026-08-14T21:09:36.045000+00:00",
+              "data_interval_start": "2026-08-14T21:09:36.045000+00:00",
+              "logical_date": "2026-08-14T21:09:36.045000+00:00",
+              "run_after": "2026-08-14T21:09:36.045000+00:00",
+              "run_id": "manual__2026-08-14T21:09:37.442952+00:00",
+              "run_type": "manual",
+              "start_date": "2026-08-14T21:09:38.251181+00:00"
+            },
+            "task": {
+              "depends_on_past": false,
+              "downstream_task_ids": "['dbt_build_core']",
+              "executor_config": {},
+              "ignore_first_depends_on_past": false,
+              "inlets": "[]",
+              "mapped": false,
+              "multiple_outputs": false,
+              "operator_class": "SQLExecuteQueryOperator",
+              "operator_class_path": "airflow.providers.common.sql.operators.sql.SQLExecuteQueryOperator",
+              "operator_provider_version": "1.27.3",
+              "outlets": "[]",
+              "owner": "airflow",
+              "priority_weight": 1,
+              "queue": "default",
+              "retries": 0,
+              "retry_exponential_backoff": false,
+              "task_id": "reload_raw",
+              "trigger_rule": "all_success",
+              "upstream_task_ids": "[]",
+              "wait_for_downstream": false,
+              "wait_for_past_depends_before_skipping": false
+            },
+            "taskInstance": {
+              "dag_bundle_name": "dags-folder",
+              "log_url": "http://localhost:8080/dags/zomato_batch/runs/manual__2026-08-14T21%3A09%3A37.442952%2B00%3A00/tasks/reload_raw?try_number=1",
+              "try_number": 1
+            },
+            "taskUuid": "01a0021b-dead-7444-a446-6b1be8956270"
+          },
+          "extractionError": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-2/ExtractionErrorRunFacet.json#/$defs/ExtractionErrorRunFacet",
+            "errors": [
+              {
+                "errorMessage": "Expected: end of statement, found: ON_ERROR at Line: 1, Column: 82",
+                "task": "COPY INTO ZOMATO.RAW.restaurants FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/restaurants/  ON_ERROR='CONTINUE'",
+                "taskNumber": 1
+              },
+              {
+                "errorMessage": "Expected: end of statement, found: ON_ERROR at Line: 1, Column: 82",
+                "task": "COPY INTO ZOMATO.RAW.users       FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/users/        ON_ERROR='CONTINUE'",
+                "taskNumber": 2
+              },
+              {
+                "errorMessage": "Expected: end of statement, found: ON_ERROR at Line: 1, Column: 82",
+                "task": "COPY INTO ZOMATO.RAW.food        FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/food/         ON_ERROR='CONTINUE'",
+                "taskNumber": 3
+              },
+              {
+                "errorMessage": "Expected: end of statement, found: ON_ERROR at Line: 1, Column: 82",
+                "task": "COPY INTO ZOMATO.RAW.menu        FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/menu/         ON_ERROR='CONTINUE'",
+                "taskNumber": 4
+              }
+            ],
+            "failedTasks": 4,
+            "totalTasks": 8
+          },
+          "nominalTime": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-1/NominalTimeRunFacet.json#/$defs/NominalTimeRunFacet",
+            "nominalEndTime": "2026-08-14T21:09:36.045000+00:00",
+            "nominalStartTime": "2026-08-14T21:09:36.045000+00:00"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+            }
+          },
+          "processing_engine": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-1/ProcessingEngineRunFacet.json#/$defs/ProcessingEngineRunFacet",
+            "name": "Airflow",
+            "openlineageAdapterVersion": "2.5.0",
+            "version": "3.0.3"
+          }
+        },
+        "runId": "01a0021b-dead-7444-a446-6b1be8956270"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T14:09:47.981000-07:00",
+      "eventType": "START",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "SNOWFLAKE",
+            "jobType": "QUERY",
+            "processingType": "BATCH"
+          },
+          "sql": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/SQLJobFacet.json#/$defs/SQLJobFacet",
+            "query": "USE WAREHOUSE ZOMATO_WH"
+          }
+        },
+        "name": "zomato_batch.reload_raw.query.1",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "externalQuery": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-2/ExternalQueryRunFacet.json#/$defs/ExternalQueryRunFacet",
+            "externalQueryId": "01c66455-0107-8703-000f-f2f20004f0c6",
+            "source": "snowflake://wsaoymw-ko56800"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch.reload_raw",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7444-a446-6b1be8956270"
+            }
+          }
+        },
+        "runId": "01a0021c-3b82-7138-b1b8-06fb92d75d3e"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T14:09:48.030000-07:00",
+      "eventType": "COMPLETE",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "SNOWFLAKE",
+            "jobType": "QUERY",
+            "processingType": "BATCH"
+          },
+          "sql": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/SQLJobFacet.json#/$defs/SQLJobFacet",
+            "query": "USE WAREHOUSE ZOMATO_WH"
+          }
+        },
+        "name": "zomato_batch.reload_raw.query.1",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "externalQuery": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-2/ExternalQueryRunFacet.json#/$defs/ExternalQueryRunFacet",
+            "externalQueryId": "01c66455-0107-8703-000f-f2f20004f0c6",
+            "source": "snowflake://wsaoymw-ko56800"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch.reload_raw",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7444-a446-6b1be8956270"
+            }
+          }
+        },
+        "runId": "01a0021c-3b82-7138-b1b8-06fb92d75d3e"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T14:09:48.080000-07:00",
+      "eventType": "START",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "SNOWFLAKE",
+            "jobType": "QUERY",
+            "processingType": "BATCH"
+          },
+          "sql": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/SQLJobFacet.json#/$defs/SQLJobFacet",
+            "query": "COPY INTO ZOMATO.RAW.restaurants FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/restaurants/  ON_ERROR='CONTINUE'"
+          }
+        },
+        "name": "zomato_batch.reload_raw.query.2",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "externalQuery": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-2/ExternalQueryRunFacet.json#/$defs/ExternalQueryRunFacet",
+            "externalQueryId": "01c66455-0107-8704-000f-f2f200052852",
+            "source": "snowflake://wsaoymw-ko56800"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch.reload_raw",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7444-a446-6b1be8956270"
+            }
+          }
+        },
+        "runId": "01a0021c-3b83-7b98-ba68-66e5f8482883"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T14:09:48.941000-07:00",
+      "eventType": "COMPLETE",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "SNOWFLAKE",
+            "jobType": "QUERY",
+            "processingType": "BATCH"
+          },
+          "sql": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/SQLJobFacet.json#/$defs/SQLJobFacet",
+            "query": "COPY INTO ZOMATO.RAW.restaurants FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/restaurants/  ON_ERROR='CONTINUE'"
+          }
+        },
+        "name": "zomato_batch.reload_raw.query.2",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "externalQuery": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-2/ExternalQueryRunFacet.json#/$defs/ExternalQueryRunFacet",
+            "externalQueryId": "01c66455-0107-8704-000f-f2f200052852",
+            "source": "snowflake://wsaoymw-ko56800"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch.reload_raw",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7444-a446-6b1be8956270"
+            }
+          }
+        },
+        "runId": "01a0021c-3b83-7b98-ba68-66e5f8482883"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T14:09:49.109000-07:00",
+      "eventType": "START",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "SNOWFLAKE",
+            "jobType": "QUERY",
+            "processingType": "BATCH"
+          },
+          "sql": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/SQLJobFacet.json#/$defs/SQLJobFacet",
+            "query": "COPY INTO ZOMATO.RAW.users       FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/users/        ON_ERROR='CONTINUE'"
+          }
+        },
+        "name": "zomato_batch.reload_raw.query.3",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "externalQuery": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-2/ExternalQueryRunFacet.json#/$defs/ExternalQueryRunFacet",
+            "externalQueryId": "01c66455-0107-8435-000f-f2f20004a3f6",
+            "source": "snowflake://wsaoymw-ko56800"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch.reload_raw",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7444-a446-6b1be8956270"
+            }
+          }
+        },
+        "runId": "01a0021c-3b83-7aac-ae06-9480ca921a08"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T14:09:50.015000-07:00",
+      "eventType": "COMPLETE",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "SNOWFLAKE",
+            "jobType": "QUERY",
+            "processingType": "BATCH"
+          },
+          "sql": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/SQLJobFacet.json#/$defs/SQLJobFacet",
+            "query": "COPY INTO ZOMATO.RAW.users       FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/users/        ON_ERROR='CONTINUE'"
+          }
+        },
+        "name": "zomato_batch.reload_raw.query.3",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "externalQuery": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-2/ExternalQueryRunFacet.json#/$defs/ExternalQueryRunFacet",
+            "externalQueryId": "01c66455-0107-8435-000f-f2f20004a3f6",
+            "source": "snowflake://wsaoymw-ko56800"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch.reload_raw",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7444-a446-6b1be8956270"
+            }
+          }
+        },
+        "runId": "01a0021c-3b83-7aac-ae06-9480ca921a08"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T14:09:50.238000-07:00",
+      "eventType": "START",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "SNOWFLAKE",
+            "jobType": "QUERY",
+            "processingType": "BATCH"
+          },
+          "sql": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/SQLJobFacet.json#/$defs/SQLJobFacet",
+            "query": "COPY INTO ZOMATO.RAW.food        FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/food/         ON_ERROR='CONTINUE'"
+          }
+        },
+        "name": "zomato_batch.reload_raw.query.4",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "externalQuery": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-2/ExternalQueryRunFacet.json#/$defs/ExternalQueryRunFacet",
+            "externalQueryId": "01c66455-0107-8189-000f-f2f20004b382",
+            "source": "snowflake://wsaoymw-ko56800"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch.reload_raw",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7444-a446-6b1be8956270"
+            }
+          }
+        },
+        "runId": "01a0021c-3b83-77a4-9634-49029cee9609"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T14:09:51.402000-07:00",
+      "eventType": "COMPLETE",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "SNOWFLAKE",
+            "jobType": "QUERY",
+            "processingType": "BATCH"
+          },
+          "sql": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/SQLJobFacet.json#/$defs/SQLJobFacet",
+            "query": "COPY INTO ZOMATO.RAW.food        FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/food/         ON_ERROR='CONTINUE'"
+          }
+        },
+        "name": "zomato_batch.reload_raw.query.4",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "externalQuery": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-2/ExternalQueryRunFacet.json#/$defs/ExternalQueryRunFacet",
+            "externalQueryId": "01c66455-0107-8189-000f-f2f20004b382",
+            "source": "snowflake://wsaoymw-ko56800"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch.reload_raw",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7444-a446-6b1be8956270"
+            }
+          }
+        },
+        "runId": "01a0021c-3b83-77a4-9634-49029cee9609"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T14:09:51.467000-07:00",
+      "eventType": "START",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "SNOWFLAKE",
+            "jobType": "QUERY",
+            "processingType": "BATCH"
+          },
+          "sql": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/SQLJobFacet.json#/$defs/SQLJobFacet",
+            "query": "COPY INTO ZOMATO.RAW.menu        FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/menu/         ON_ERROR='CONTINUE'"
+          }
+        },
+        "name": "zomato_batch.reload_raw.query.5",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "externalQuery": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-2/ExternalQueryRunFacet.json#/$defs/ExternalQueryRunFacet",
+            "externalQueryId": "01c66455-0107-882c-000f-f2f200053016",
+            "source": "snowflake://wsaoymw-ko56800"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch.reload_raw",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7444-a446-6b1be8956270"
+            }
+          }
+        },
+        "runId": "01a0021c-3b83-73d7-8df6-8be463caa27c"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T14:09:52.536000-07:00",
+      "eventType": "COMPLETE",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "SNOWFLAKE",
+            "jobType": "QUERY",
+            "processingType": "BATCH"
+          },
+          "sql": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/SQLJobFacet.json#/$defs/SQLJobFacet",
+            "query": "COPY INTO ZOMATO.RAW.menu        FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/menu/         ON_ERROR='CONTINUE'"
+          }
+        },
+        "name": "zomato_batch.reload_raw.query.5",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "externalQuery": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-2/ExternalQueryRunFacet.json#/$defs/ExternalQueryRunFacet",
+            "externalQueryId": "01c66455-0107-882c-000f-f2f200053016",
+            "source": "snowflake://wsaoymw-ko56800"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch.reload_raw",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7444-a446-6b1be8956270"
+            }
+          }
+        },
+        "runId": "01a0021c-3b83-73d7-8df6-8be463caa27c"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T14:09:52.595000-07:00",
+      "eventType": "START",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "SNOWFLAKE",
+            "jobType": "QUERY",
+            "processingType": "BATCH"
+          },
+          "sql": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/SQLJobFacet.json#/$defs/SQLJobFacet",
+            "query": "COPY INTO ZOMATO.RAW.orders      FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/orders/"
+          }
+        },
+        "name": "zomato_batch.reload_raw.query.6",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "externalQuery": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-2/ExternalQueryRunFacet.json#/$defs/ExternalQueryRunFacet",
+            "externalQueryId": "01c66455-0107-8712-000f-f2f20005006e",
+            "source": "snowflake://wsaoymw-ko56800"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch.reload_raw",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7444-a446-6b1be8956270"
+            }
+          }
+        },
+        "runId": "01a0021c-3b83-73d6-ae96-cf857bf2e6e3"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T14:09:53.387000-07:00",
+      "eventType": "COMPLETE",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "SNOWFLAKE",
+            "jobType": "QUERY",
+            "processingType": "BATCH"
+          },
+          "sql": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/SQLJobFacet.json#/$defs/SQLJobFacet",
+            "query": "COPY INTO ZOMATO.RAW.orders      FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/orders/"
+          }
+        },
+        "name": "zomato_batch.reload_raw.query.6",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "externalQuery": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-2/ExternalQueryRunFacet.json#/$defs/ExternalQueryRunFacet",
+            "externalQueryId": "01c66455-0107-8712-000f-f2f20005006e",
+            "source": "snowflake://wsaoymw-ko56800"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch.reload_raw",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7444-a446-6b1be8956270"
+            }
+          }
+        },
+        "runId": "01a0021c-3b83-73d6-ae96-cf857bf2e6e3"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T14:09:53.513000-07:00",
+      "eventType": "START",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "SNOWFLAKE",
+            "jobType": "QUERY",
+            "processingType": "BATCH"
+          },
+          "sql": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/SQLJobFacet.json#/$defs/SQLJobFacet",
+            "query": "COPY INTO ZOMATO.RAW.order_items FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/order_items/"
+          }
+        },
+        "name": "zomato_batch.reload_raw.query.7",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "externalQuery": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-2/ExternalQueryRunFacet.json#/$defs/ExternalQueryRunFacet",
+            "externalQueryId": "01c66455-0107-882c-000f-f2f20005301a",
+            "source": "snowflake://wsaoymw-ko56800"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch.reload_raw",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7444-a446-6b1be8956270"
+            }
+          }
+        },
+        "runId": "01a0021c-3b83-7945-87e1-9c2d95c0ee6a"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T14:09:54.008000-07:00",
+      "eventType": "COMPLETE",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "SNOWFLAKE",
+            "jobType": "QUERY",
+            "processingType": "BATCH"
+          },
+          "sql": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/SQLJobFacet.json#/$defs/SQLJobFacet",
+            "query": "COPY INTO ZOMATO.RAW.order_items FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/order_items/"
+          }
+        },
+        "name": "zomato_batch.reload_raw.query.7",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "externalQuery": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-2/ExternalQueryRunFacet.json#/$defs/ExternalQueryRunFacet",
+            "externalQueryId": "01c66455-0107-882c-000f-f2f20005301a",
+            "source": "snowflake://wsaoymw-ko56800"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch.reload_raw",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7444-a446-6b1be8956270"
+            }
+          }
+        },
+        "runId": "01a0021c-3b83-7945-87e1-9c2d95c0ee6a"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T14:09:54.128000-07:00",
+      "eventType": "START",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "SNOWFLAKE",
+            "jobType": "QUERY",
+            "processingType": "BATCH"
+          },
+          "sql": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/SQLJobFacet.json#/$defs/SQLJobFacet",
+            "query": "COPY INTO ZOMATO.RAW.reviews     FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/reviews/"
+          }
+        },
+        "name": "zomato_batch.reload_raw.query.8",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "externalQuery": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-2/ExternalQueryRunFacet.json#/$defs/ExternalQueryRunFacet",
+            "externalQueryId": "01c66455-0107-8189-000f-f2f20004b386",
+            "source": "snowflake://wsaoymw-ko56800"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch.reload_raw",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7444-a446-6b1be8956270"
+            }
+          }
+        },
+        "runId": "01a0021c-3b83-7ba1-b24e-0eaa364e99f8"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T14:09:54.730000-07:00",
+      "eventType": "COMPLETE",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "SNOWFLAKE",
+            "jobType": "QUERY",
+            "processingType": "BATCH"
+          },
+          "sql": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/SQLJobFacet.json#/$defs/SQLJobFacet",
+            "query": "COPY INTO ZOMATO.RAW.reviews     FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/reviews/"
+          }
+        },
+        "name": "zomato_batch.reload_raw.query.8",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "externalQuery": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-2/ExternalQueryRunFacet.json#/$defs/ExternalQueryRunFacet",
+            "externalQueryId": "01c66455-0107-8189-000f-f2f20004b386",
+            "source": "snowflake://wsaoymw-ko56800"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch.reload_raw",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7444-a446-6b1be8956270"
+            }
+          }
+        },
+        "runId": "01a0021c-3b83-7ba1-b24e-0eaa364e99f8"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T21:09:54.992376+00:00",
+      "eventType": "COMPLETE",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "AIRFLOW",
+            "jobType": "TASK",
+            "processingType": "BATCH"
+          },
+          "ownership": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-1/OwnershipJobFacet.json#/$defs/OwnershipJobFacet",
+            "owners": [
+              {
+                "name": "airflow"
+              }
+            ]
+          },
+          "sql": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/SQLJobFacet.json#/$defs/SQLJobFacet",
+            "query": "USE WAREHOUSE ZOMATO_WH;\nCOPY INTO ZOMATO.RAW.restaurants FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/restaurants/  ON_ERROR='CONTINUE';\nCOPY INTO ZOMATO.RAW.users       FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/users/        ON_ERROR='CONTINUE';\nCOPY INTO ZOMATO.RAW.food        FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/food/         ON_ERROR='CONTINUE';\nCOPY INTO ZOMATO.RAW.menu        FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/menu/         ON_ERROR='CONTINUE';\nCOPY INTO ZOMATO.RAW.orders      FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/orders/;\nCOPY INTO ZOMATO.RAW.order_items FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/order_items/;\nCOPY INTO ZOMATO.RAW.reviews     FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/reviews/"
+          },
+          "tags": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-0/TagsJobFacet.json#/$defs/TagsJobFacet",
+            "tags": [
+              {
+                "key": "dbt",
+                "source": "AIRFLOW",
+                "value": "dbt"
+              },
+              {
+                "key": "snowflake",
+                "source": "AIRFLOW",
+                "value": "snowflake"
+              },
+              {
+                "key": "zomato",
+                "source": "AIRFLOW",
+                "value": "zomato"
+              }
+            ]
+          }
+        },
+        "name": "zomato_batch.reload_raw",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [
+        {
+          "facets": {
+            "schema": {
+              "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+              "_schemaURL": "https://openlineage.io/spec/facets/1-1-1/SchemaDatasetFacet.json#/$defs/SchemaDatasetFacet",
+              "fields": [
+                {
+                  "fields": [],
+                  "name": "ORDER_ITEM_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "ORDER_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "R_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "F_ID",
+                  "type": "TEXT"
+                },
+                {
+                  "fields": [],
+                  "name": "PRICE",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "QUANTITY",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "LINE_AMOUNT",
+                  "type": "NUMBER"
+                }
+              ]
+            }
+          },
+          "name": "ZOMATO.RAW.ORDER_ITEMS",
+          "namespace": "snowflake://wsaoymw-ko56800"
+        },
+        {
+          "facets": {
+            "schema": {
+              "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+              "_schemaURL": "https://openlineage.io/spec/facets/1-1-1/SchemaDatasetFacet.json#/$defs/SchemaDatasetFacet",
+              "fields": [
+                {
+                  "fields": [],
+                  "name": "ORDER_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "ORDER_TIMESTAMP",
+                  "type": "TIMESTAMP_NTZ"
+                },
+                {
+                  "fields": [],
+                  "name": "ORDER_DATE",
+                  "type": "DATE"
+                },
+                {
+                  "fields": [],
+                  "name": "USER_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "R_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "RESTAURANT_CITY",
+                  "type": "TEXT"
+                },
+                {
+                  "fields": [],
+                  "name": "CUISINE",
+                  "type": "TEXT"
+                },
+                {
+                  "fields": [],
+                  "name": "ITEMS_COUNT",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "SALES_QTY",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "SUBTOTAL",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "DISCOUNT",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "DELIVERY_FEE",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "GST",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "SALES_AMOUNT",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "CURRENCY",
+                  "type": "TEXT"
+                },
+                {
+                  "fields": [],
+                  "name": "PAYMENT_METHOD",
+                  "type": "TEXT"
+                },
+                {
+                  "fields": [],
+                  "name": "ORDER_STATUS",
+                  "type": "TEXT"
+                },
+                {
+                  "fields": [],
+                  "name": "CUSTOMER_RATING",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "DELIVERY_TIME_MIN",
+                  "type": "NUMBER"
+                }
+              ]
+            }
+          },
+          "name": "ZOMATO.RAW.ORDERS",
+          "namespace": "snowflake://wsaoymw-ko56800"
+        },
+        {
+          "facets": {
+            "schema": {
+              "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+              "_schemaURL": "https://openlineage.io/spec/facets/1-1-1/SchemaDatasetFacet.json#/$defs/SchemaDatasetFacet",
+              "fields": [
+                {
+                  "fields": [],
+                  "name": "REVIEW_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "ORDER_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "USER_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "RESTAURANT_ID",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "RATING",
+                  "type": "NUMBER"
+                },
+                {
+                  "fields": [],
+                  "name": "COMMENT",
+                  "type": "TEXT"
+                },
+                {
+                  "fields": [],
+                  "name": "REVIEW_DATE",
+                  "type": "DATE"
+                }
+              ]
+            }
+          },
+          "name": "ZOMATO.RAW.REVIEWS",
+          "namespace": "snowflake://wsaoymw-ko56800"
+        }
+      ],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "airflow": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunFacet",
+            "dag": {
+              "dag_id": "zomato_batch",
+              "fileloc": "/opt/airflow/dags/zomato_batch.py",
+              "owner": "airflow",
+              "owner_links": {},
+              "start_date": "2024-01-01T00:00:00+00:00",
+              "tags": "['dbt', 'snowflake', 'zomato']",
+              "timetable": {
+                "expression": "0 0 * * *",
+                "interval": 0,
+                "run_immediately": false,
+                "timezone": "UTC"
+              },
+              "timetable_summary": "0 0 * * *"
+            },
+            "dagRun": {
+              "conf": {},
+              "dag_id": "zomato_batch",
+              "data_interval_end": "2026-08-14T21:09:36.045000+00:00",
+              "data_interval_start": "2026-08-14T21:09:36.045000+00:00",
+              "logical_date": "2026-08-14T21:09:36.045000+00:00",
+              "run_after": "2026-08-14T21:09:36.045000+00:00",
+              "run_id": "manual__2026-08-14T21:09:37.442952+00:00",
+              "run_type": "manual",
+              "start_date": "2026-08-14T21:09:38.251181+00:00"
+            },
+            "task": {
+              "depends_on_past": false,
+              "downstream_task_ids": "['dbt_build_core']",
+              "executor_config": {},
+              "ignore_first_depends_on_past": false,
+              "inlets": "[]",
+              "mapped": false,
+              "multiple_outputs": false,
+              "operator_class": "SQLExecuteQueryOperator",
+              "operator_class_path": "airflow.providers.common.sql.operators.sql.SQLExecuteQueryOperator",
+              "operator_provider_version": "1.27.3",
+              "outlets": "[]",
+              "owner": "airflow",
+              "priority_weight": 1,
+              "queue": "default",
+              "retries": 0,
+              "retry_exponential_backoff": false,
+              "task_id": "reload_raw",
+              "trigger_rule": "all_success",
+              "upstream_task_ids": "[]",
+              "wait_for_downstream": false,
+              "wait_for_past_depends_before_skipping": false
+            },
+            "taskInstance": {
+              "dag_bundle_name": "dags-folder",
+              "log_url": "http://localhost:8080/dags/zomato_batch/runs/manual__2026-08-14T21%3A09%3A37.442952%2B00%3A00/tasks/reload_raw?try_number=1",
+              "try_number": 1
+            },
+            "taskUuid": "01a0021b-dead-7444-a446-6b1be8956270"
+          },
+          "extractionError": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-2/ExtractionErrorRunFacet.json#/$defs/ExtractionErrorRunFacet",
+            "errors": [
+              {
+                "errorMessage": "Expected: end of statement, found: ON_ERROR at Line: 1, Column: 82",
+                "task": "COPY INTO ZOMATO.RAW.restaurants FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/restaurants/  ON_ERROR='CONTINUE'",
+                "taskNumber": 1
+              },
+              {
+                "errorMessage": "Expected: end of statement, found: ON_ERROR at Line: 1, Column: 82",
+                "task": "COPY INTO ZOMATO.RAW.users       FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/users/        ON_ERROR='CONTINUE'",
+                "taskNumber": 2
+              },
+              {
+                "errorMessage": "Expected: end of statement, found: ON_ERROR at Line: 1, Column: 82",
+                "task": "COPY INTO ZOMATO.RAW.food        FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/food/         ON_ERROR='CONTINUE'",
+                "taskNumber": 3
+              },
+              {
+                "errorMessage": "Expected: end of statement, found: ON_ERROR at Line: 1, Column: 82",
+                "task": "COPY INTO ZOMATO.RAW.menu        FROM @ZOMATO.RAW.ZOMATO_RAW_STAGE/menu/         ON_ERROR='CONTINUE'",
+                "taskNumber": 4
+              }
+            ],
+            "failedTasks": 4,
+            "totalTasks": 8
+          },
+          "nominalTime": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-1/NominalTimeRunFacet.json#/$defs/NominalTimeRunFacet",
+            "nominalEndTime": "2026-08-14T21:09:36.045000+00:00",
+            "nominalStartTime": "2026-08-14T21:09:36.045000+00:00"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+            }
+          },
+          "processing_engine": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-1/ProcessingEngineRunFacet.json#/$defs/ProcessingEngineRunFacet",
+            "name": "Airflow",
+            "openlineageAdapterVersion": "2.5.0",
+            "version": "3.0.3"
+          }
+        },
+        "runId": "01a0021b-dead-7444-a446-6b1be8956270"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T21:09:59.953049+00:00",
+      "eventType": "START",
+      "inputs": [
+        {
+          "facets": {},
+          "name": "ZOMATO.RAW.RESTAURANTS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.RAW.USERS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.RAW.FOOD",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.RAW.MENU",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.RAW.ORDERS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.RAW.ORDER_ITEMS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.RAW.REVIEWS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        }
+      ],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "AIRFLOW",
+            "jobType": "TASK",
+            "processingType": "BATCH"
+          },
+          "ownership": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-1/OwnershipJobFacet.json#/$defs/OwnershipJobFacet",
+            "owners": [
+              {
+                "name": "airflow"
+              }
+            ]
+          },
+          "sourceCode": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-1/SourceCodeJobFacet.json#/$defs/SourceCodeJobFacet",
+            "language": "bash",
+            "sourceCode": "/opt/airflow/dbt_venv/bin/dbt build --target prod --project-dir /opt/airflow/dbt/zomato --profiles-dir /opt/airflow/dbt/zomato"
+          },
+          "tags": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-0/TagsJobFacet.json#/$defs/TagsJobFacet",
+            "tags": [
+              {
+                "key": "dbt",
+                "source": "AIRFLOW",
+                "value": "dbt"
+              },
+              {
+                "key": "snowflake",
+                "source": "AIRFLOW",
+                "value": "snowflake"
+              },
+              {
+                "key": "zomato",
+                "source": "AIRFLOW",
+                "value": "zomato"
+              }
+            ]
+          }
+        },
+        "name": "zomato_batch.dbt_build_core",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [
+        {
+          "facets": {},
+          "name": "ZOMATO.STAGING.STG_RESTAURANTS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.STAGING.STG_USERS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.STAGING.STG_FOOD",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.STAGING.STG_MENU",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.STAGING.STG_ORDERS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.STAGING.STG_ORDER_ITEMS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.STAGING.STG_REVIEWS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.MARTS.DIM_CUSTOMER",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.MARTS.DIM_DATE",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.MARTS.DIM_FOOD",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.MARTS.DIM_RESTAURANTS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.MARTS.FACT_ORDER_ITEMS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.MARTS.FCT_ORDERS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.MARTS.MART_DAILY_CITY_REVENUNE",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.MARTS.MART_DELIVERY_SLA",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.MARTS.MART_RESTAURANT_PERFORMANCE",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        }
+      ],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "airflow": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunFacet",
+            "dag": {
+              "dag_id": "zomato_batch",
+              "fileloc": "/opt/airflow/dags/zomato_batch.py",
+              "owner": "airflow",
+              "owner_links": {},
+              "start_date": "2024-01-01T00:00:00+00:00",
+              "tags": "['dbt', 'snowflake', 'zomato']",
+              "timetable": {
+                "expression": "0 0 * * *",
+                "interval": 0,
+                "run_immediately": false,
+                "timezone": "UTC"
+              },
+              "timetable_summary": "0 0 * * *"
+            },
+            "dagRun": {
+              "conf": {},
+              "dag_id": "zomato_batch",
+              "data_interval_end": "2026-08-14T21:09:36.045000+00:00",
+              "data_interval_start": "2026-08-14T21:09:36.045000+00:00",
+              "logical_date": "2026-08-14T21:09:36.045000+00:00",
+              "run_after": "2026-08-14T21:09:36.045000+00:00",
+              "run_id": "manual__2026-08-14T21:09:37.442952+00:00",
+              "run_type": "manual",
+              "start_date": "2026-08-14T21:09:38.251181+00:00"
+            },
+            "task": {
+              "depends_on_past": false,
+              "downstream_task_ids": "[]",
+              "executor_config": {},
+              "ignore_first_depends_on_past": false,
+              "inlets": "[]",
+              "mapped": false,
+              "multiple_outputs": false,
+              "operator_class": "BashOperator",
+              "operator_class_path": "airflow.providers.standard.operators.bash.BashOperator",
+              "operator_provider_version": "1.4.1",
+              "outlets": "[]",
+              "owner": "airflow",
+              "priority_weight": 1,
+              "queue": "default",
+              "retries": 0,
+              "retry_exponential_backoff": false,
+              "task_id": "dbt_build_core",
+              "trigger_rule": "all_success",
+              "upstream_task_ids": "['reload_raw']",
+              "wait_for_downstream": false,
+              "wait_for_past_depends_before_skipping": false
+            },
+            "taskInstance": {
+              "dag_bundle_name": "dags-folder",
+              "log_url": "http://localhost:8080/dags/zomato_batch/runs/manual__2026-08-14T21%3A09%3A37.442952%2B00%3A00/tasks/dbt_build_core?try_number=1",
+              "try_number": 1
+            },
+            "taskUuid": "01a0021b-dead-74c0-9a3a-9f967b4e1923"
+          },
+          "nominalTime": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-1/NominalTimeRunFacet.json#/$defs/NominalTimeRunFacet",
+            "nominalEndTime": "2026-08-14T21:09:36.045000+00:00",
+            "nominalStartTime": "2026-08-14T21:09:36.045000+00:00"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+            }
+          },
+          "processing_engine": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-1/ProcessingEngineRunFacet.json#/$defs/ProcessingEngineRunFacet",
+            "name": "Airflow",
+            "openlineageAdapterVersion": "2.5.0",
+            "version": "3.0.3"
+          },
+          "unknownSourceAttribute": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunFacet",
+            "unknownItems": [
+              {
+                "name": "BashOperator",
+                "properties": {
+                  "depends_on_past": false,
+                  "downstream_task_ids": "[]",
+                  "executor_config": {},
+                  "ignore_first_depends_on_past": false,
+                  "inlets": "[]",
+                  "mapped": false,
+                  "multiple_outputs": false,
+                  "operator_class": "BashOperator",
+                  "operator_class_path": "airflow.providers.standard.operators.bash.BashOperator",
+                  "operator_provider_version": "1.4.1",
+                  "outlets": "[]",
+                  "owner": "airflow",
+                  "priority_weight": 1,
+                  "queue": "default",
+                  "retries": 0,
+                  "retry_exponential_backoff": false,
+                  "task_id": "dbt_build_core",
+                  "trigger_rule": "all_success",
+                  "upstream_task_ids": "['reload_raw']",
+                  "wait_for_downstream": false,
+                  "wait_for_past_depends_before_skipping": false
+                },
+                "type": "operator"
+              }
+            ]
+          }
+        },
+        "runId": "01a0021b-dead-74c0-9a3a-9f967b4e1923"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T21:10:21.098330+00:00",
+      "eventType": "COMPLETE",
+      "inputs": [
+        {
+          "facets": {},
+          "name": "ZOMATO.RAW.RESTAURANTS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.RAW.USERS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.RAW.FOOD",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.RAW.MENU",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.RAW.ORDERS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.RAW.ORDER_ITEMS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.RAW.REVIEWS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        }
+      ],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "AIRFLOW",
+            "jobType": "TASK",
+            "processingType": "BATCH"
+          },
+          "ownership": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-1/OwnershipJobFacet.json#/$defs/OwnershipJobFacet",
+            "owners": [
+              {
+                "name": "airflow"
+              }
+            ]
+          },
+          "sourceCode": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-1/SourceCodeJobFacet.json#/$defs/SourceCodeJobFacet",
+            "language": "bash",
+            "sourceCode": "/opt/airflow/dbt_venv/bin/dbt build --target prod --project-dir /opt/airflow/dbt/zomato --profiles-dir /opt/airflow/dbt/zomato"
+          },
+          "tags": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-0/TagsJobFacet.json#/$defs/TagsJobFacet",
+            "tags": [
+              {
+                "key": "dbt",
+                "source": "AIRFLOW",
+                "value": "dbt"
+              },
+              {
+                "key": "snowflake",
+                "source": "AIRFLOW",
+                "value": "snowflake"
+              },
+              {
+                "key": "zomato",
+                "source": "AIRFLOW",
+                "value": "zomato"
+              }
+            ]
+          }
+        },
+        "name": "zomato_batch.dbt_build_core",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [
+        {
+          "facets": {},
+          "name": "ZOMATO.STAGING.STG_RESTAURANTS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.STAGING.STG_USERS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.STAGING.STG_FOOD",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.STAGING.STG_MENU",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.STAGING.STG_ORDERS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.STAGING.STG_ORDER_ITEMS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.STAGING.STG_REVIEWS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.MARTS.DIM_CUSTOMER",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.MARTS.DIM_DATE",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.MARTS.DIM_FOOD",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.MARTS.DIM_RESTAURANTS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.MARTS.FACT_ORDER_ITEMS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.MARTS.FCT_ORDERS",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.MARTS.MART_DAILY_CITY_REVENUNE",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.MARTS.MART_DELIVERY_SLA",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        },
+        {
+          "facets": {},
+          "name": "ZOMATO.MARTS.MART_RESTAURANT_PERFORMANCE",
+          "namespace": "snowflake://WSAOYMW-KO56800"
+        }
+      ],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "airflow": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunFacet",
+            "dag": {
+              "dag_id": "zomato_batch",
+              "fileloc": "/opt/airflow/dags/zomato_batch.py",
+              "owner": "airflow",
+              "owner_links": {},
+              "start_date": "2024-01-01T00:00:00+00:00",
+              "tags": "['dbt', 'snowflake', 'zomato']",
+              "timetable": {
+                "expression": "0 0 * * *",
+                "interval": 0,
+                "run_immediately": false,
+                "timezone": "UTC"
+              },
+              "timetable_summary": "0 0 * * *"
+            },
+            "dagRun": {
+              "conf": {},
+              "dag_id": "zomato_batch",
+              "data_interval_end": "2026-08-14T21:09:36.045000+00:00",
+              "data_interval_start": "2026-08-14T21:09:36.045000+00:00",
+              "logical_date": "2026-08-14T21:09:36.045000+00:00",
+              "run_after": "2026-08-14T21:09:36.045000+00:00",
+              "run_id": "manual__2026-08-14T21:09:37.442952+00:00",
+              "run_type": "manual",
+              "start_date": "2026-08-14T21:09:38.251181+00:00"
+            },
+            "task": {
+              "depends_on_past": false,
+              "downstream_task_ids": "[]",
+              "executor_config": {},
+              "ignore_first_depends_on_past": false,
+              "inlets": "[]",
+              "mapped": false,
+              "multiple_outputs": false,
+              "operator_class": "BashOperator",
+              "operator_class_path": "airflow.providers.standard.operators.bash.BashOperator",
+              "operator_provider_version": "1.4.1",
+              "outlets": "[]",
+              "owner": "airflow",
+              "priority_weight": 1,
+              "queue": "default",
+              "retries": 0,
+              "retry_exponential_backoff": false,
+              "task_id": "dbt_build_core",
+              "trigger_rule": "all_success",
+              "upstream_task_ids": "['reload_raw']",
+              "wait_for_downstream": false,
+              "wait_for_past_depends_before_skipping": false
+            },
+            "taskInstance": {
+              "dag_bundle_name": "dags-folder",
+              "log_url": "http://localhost:8080/dags/zomato_batch/runs/manual__2026-08-14T21%3A09%3A37.442952%2B00%3A00/tasks/dbt_build_core?try_number=1",
+              "try_number": 1
+            },
+            "taskUuid": "01a0021b-dead-74c0-9a3a-9f967b4e1923"
+          },
+          "nominalTime": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-1/NominalTimeRunFacet.json#/$defs/NominalTimeRunFacet",
+            "nominalEndTime": "2026-08-14T21:09:36.045000+00:00",
+            "nominalStartTime": "2026-08-14T21:09:36.045000+00:00"
+          },
+          "parent": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-0/ParentRunFacet.json#/$defs/ParentRunFacet",
+            "job": {
+              "name": "zomato_batch",
+              "namespace": "zomato-airflow"
+            },
+            "root": {
+              "job": {
+                "name": "zomato_batch",
+                "namespace": "zomato-airflow"
+              },
+              "run": {
+                "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+              }
+            },
+            "run": {
+              "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+            }
+          },
+          "processing_engine": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-1/ProcessingEngineRunFacet.json#/$defs/ProcessingEngineRunFacet",
+            "name": "Airflow",
+            "openlineageAdapterVersion": "2.5.0",
+            "version": "3.0.3"
+          },
+          "unknownSourceAttribute": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunFacet",
+            "unknownItems": [
+              {
+                "name": "BashOperator",
+                "properties": {
+                  "depends_on_past": false,
+                  "downstream_task_ids": "[]",
+                  "executor_config": {},
+                  "ignore_first_depends_on_past": false,
+                  "inlets": "[]",
+                  "mapped": false,
+                  "multiple_outputs": false,
+                  "operator_class": "BashOperator",
+                  "operator_class_path": "airflow.providers.standard.operators.bash.BashOperator",
+                  "operator_provider_version": "1.4.1",
+                  "outlets": "[]",
+                  "owner": "airflow",
+                  "priority_weight": 1,
+                  "queue": "default",
+                  "retries": 0,
+                  "retry_exponential_backoff": false,
+                  "task_id": "dbt_build_core",
+                  "trigger_rule": "all_success",
+                  "upstream_task_ids": "['reload_raw']",
+                  "wait_for_downstream": false,
+                  "wait_for_past_depends_before_skipping": false
+                },
+                "type": "operator"
+              }
+            ]
+          }
+        },
+        "runId": "01a0021b-dead-74c0-9a3a-9f967b4e1923"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    },
+    {
+      "eventTime": "2026-08-14T21:10:21.531903+00:00",
+      "eventType": "COMPLETE",
+      "inputs": [],
+      "job": {
+        "facets": {
+          "jobType": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/2-0-3/JobTypeJobFacet.json#/$defs/JobTypeJobFacet",
+            "integration": "AIRFLOW",
+            "jobType": "DAG",
+            "processingType": "BATCH"
+          },
+          "ownership": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-1/OwnershipJobFacet.json#/$defs/OwnershipJobFacet",
+            "owners": [
+              {
+                "name": "airflow"
+              }
+            ]
+          },
+          "tags": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-0/TagsJobFacet.json#/$defs/TagsJobFacet",
+            "tags": [
+              {
+                "key": "dbt",
+                "source": "AIRFLOW",
+                "value": "dbt"
+              },
+              {
+                "key": "snowflake",
+                "source": "AIRFLOW",
+                "value": "snowflake"
+              },
+              {
+                "key": "zomato",
+                "source": "AIRFLOW",
+                "value": "zomato"
+              }
+            ]
+          }
+        },
+        "name": "zomato_batch",
+        "namespace": "zomato-airflow"
+      },
+      "outputs": [],
+      "producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+      "run": {
+        "facets": {
+          "airflowDagRun": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunFacet",
+            "dag": {
+              "dag_id": "zomato_batch",
+              "fileloc": "/opt/airflow/dags/zomato_batch.py",
+              "owner": "airflow",
+              "owner_links": {},
+              "start_date": "2024-01-01T00:00:00+00:00",
+              "tags": "['dbt', 'snowflake', 'zomato']",
+              "timetable": {
+                "expression": "0 0 * * *",
+                "interval": 0,
+                "run_immediately": false,
+                "timezone": "UTC"
+              },
+              "timetable_summary": "0 0 * * *"
+            },
+            "dagRun": {
+              "conf": {},
+              "dag_bundle_name": "dags-folder",
+              "dag_id": "zomato_batch",
+              "dag_version_id": "01a0021a-a6ec-751d-ad82-8e8bf2ac0621",
+              "dag_version_number": 2,
+              "data_interval_end": "2026-08-14T21:09:36.045000+00:00",
+              "data_interval_start": "2026-08-14T21:09:36.045000+00:00",
+              "duration": 43.280722,
+              "end_date": "2026-08-14T21:10:21.531903+00:00",
+              "logical_date": "2026-08-14T21:09:36.045000+00:00",
+              "run_after": "2026-08-14T21:09:36.045000+00:00",
+              "run_id": "manual__2026-08-14T21:09:37.442952+00:00",
+              "run_type": "manual",
+              "start_date": "2026-08-14T21:09:38.251181+00:00"
+            }
+          },
+          "airflowState": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunFacet",
+            "dagRunState": "success",
+            "tasksState": {
+              "dbt_build_core": "success",
+              "reload_raw": "success"
+            }
+          },
+          "nominalTime": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-0-1/NominalTimeRunFacet.json#/$defs/NominalTimeRunFacet",
+            "nominalEndTime": "2026-08-14T21:09:36.045000+00:00",
+            "nominalStartTime": "2026-08-14T21:09:36.045000+00:00"
+          },
+          "processing_engine": {
+            "_producer": "https://github.com/apache/airflow/tree/providers-openlineage/2.5.0",
+            "_schemaURL": "https://openlineage.io/spec/facets/1-1-1/ProcessingEngineRunFacet.json#/$defs/ProcessingEngineRunFacet",
+            "name": "Airflow",
+            "openlineageAdapterVersion": "2.5.0",
+            "version": "3.0.3"
+          }
+        },
+        "runId": "01a0021b-dead-7ccd-8a3d-653168f36c90"
+      },
+      "schemaURL": "https://openlineage.io/spec/2-0-2/OpenLineage.json#/$defs/RunEvent"
+    }
+  ]
+}

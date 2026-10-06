@@ -1,0 +1,5 @@
+# Local credentials and runtime data
+.env
+airflow/.env
+airflow/logs/
+
